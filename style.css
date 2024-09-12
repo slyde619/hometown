@@ -7,16 +7,25 @@
     box-sizing: border-box;
 }
 
+/* 
+red: #E63946
+LIGHT:#F1FAEE
+AQUA:#A8DADC
+LIGHTBLUE:#457B9D
+DARKBLUE:#1D3557
+
+*/
+
 body{
     min-height: 100vh;
     font-family: "Open Sans", sans-serif;
-    background: #FFFEF7;
+    background: #F1FAEE;
 }
 
 header{
     position: relative;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/ph-city.jpg');
-    height: 50vh;
+    height: calc(100vh - 50vh);
     width: 100%;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -26,8 +35,25 @@ header{
     align-items: center;
     text-align: center;
     color: #f6f6ff;
+    text-transform: capitalize;
+
+    & h1{
+        background-color: #457B9D;
+        padding: .25em;
+        border-radius: .2em;
+    }
+
+    & p{
+        background-color: #1D3557;
+        padding: .15em;
+        margin-top: 1em;
+        border-radius: .2em;
+    }
 }
 
+main{
+    min-height: calc(100vh - 45vh);
+}
 article{
     font-size: 1.55rem;
 
@@ -39,7 +65,7 @@ main h2{
 }
 
 #spots{
-    /* background-color: aqua; */
+    /* background-color: #A8DADC; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,14 +75,14 @@ main h2{
 }
 
 .spot{
-    width: 33.3%;
+    width: 30%;
     text-align: center;
     & img{
         width: 400px;
-        height: auto;
         max-width: 100%;
         aspect-ratio: 16 / 9;
-        border-radius: 10px;
+        object-fit: cover;
+        border-radius: 18px;
         display: block;
         margin: 0 auto 1.22em auto;
     }
@@ -67,6 +93,40 @@ main h2{
     }
     & p{
         line-height: 1.1;
+        width: 300px;
+        margin: 0 auto;
     }
 }
 
+#guide{
+    padding: 1.5em 0;
+    background-color: #FFF;
+
+    & .wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.2em;
+        background-color: #A8DADC;
+        border-bottom: 3px solid #1D3557;
+        border-radius: .25em;
+        margin: 1em auto;
+        width: 30%;
+        padding: .9em;
+    }
+    & .img-item{
+        height: 200px;
+        width: 200px;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+    .item-two{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100px;
+        text-align: center;
+        max-width: 300px;
+        gap: 1em;
+    }
+}
